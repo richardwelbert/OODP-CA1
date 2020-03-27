@@ -2,6 +2,9 @@ import java.sql.*;
 
 public class DataSource {
 
+    // Private Static instance of this class
+    private static DataSource instance = new DataSource();
+
     private String db = "jdbc:mysql://52.50.23.197:3306/world";
     private String un = "cctstudent";
     private String pw = "Pass1234!";
@@ -10,7 +13,8 @@ public class DataSource {
     private Statement stmt;
     private ResultSet rs = null;
 
-    public DataSource() {
+    //private constructor to make sure that no other object can create an instance of it
+    private DataSource() {
 
         try{
 
@@ -37,6 +41,7 @@ public class DataSource {
         }
     }
 
+    //method to save on the database
     public boolean save(String query){
 
         try {
@@ -48,6 +53,7 @@ public class DataSource {
         }
     }
 
+    //method to select entries from the database
     public ResultSet select(String query){
         // Execute the query
 
@@ -72,6 +78,11 @@ public class DataSource {
         catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    //method to access the singleton instance of this class
+    public static DataSource getInstance() {
+        return instance;
     }
 
 }
