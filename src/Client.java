@@ -43,10 +43,20 @@ public class Client {
             System.out.println("Please tell me the Country Code: \n" +
                     "(It shouldn't be more than 3 characters!) \n");
             String input2 = readingFromUser();
-            Country c = dao.findCountryById(input2);
-            System.out.println("Here is the Country requested:");
-            System.out.println(c);
-            menu();
+
+            if (input2.length() <= 3){
+                Country c = dao.findCountryById(input2);
+                System.out.println("Here is the Country requested:");
+                System.out.println(c);
+                menu();
+            }
+            else {
+                System.out.println("I'm sorry, this is Code is invalid.\n" +
+                        "Please remember the Country Code shouldn't exceed 3 characters!\n" +
+                        "Redirecting you to the main menu.\n\n");
+                menu();
+            }
+
         }
         else if(input.equals("3")) {
             System.out.println("Find a Country by Country Name!");
