@@ -6,6 +6,13 @@ public class MySqlCountryDAO implements CountryDAO{
 
     private DataSource db = DataSource.getInstance();
 
+    private String code = "";
+    private String name = "";
+    private Continent continent;
+    private String cName;
+    private float area;
+    private String head;
+    private Country c = null;
 
     @Override
     public ArrayList<Country> getCountries() {
@@ -13,21 +20,19 @@ public class MySqlCountryDAO implements CountryDAO{
         ArrayList<Country> countries = new ArrayList<Country>();
 
         String query = "SELECT * FROM country";
-        ResultSet rs = db.select(query);
-        String code = "";
-        String name = "";
-        Continent continent;
-        double area;
-        String head;
-        Country c = null;
+        ResultSet rs = db.getInstance().select(query);
 
         try {
 
             while (rs.next()) {
                 code = rs.getString(1);
                 name = rs.getString(2);
-                continent = Continent.valueOf(rs.getString(3));;
-                area = rs.getDouble(4);
+                cName = rs.getString(3).replace(" ", "_");
+                if(cName.isEmpty()){
+                    continue;
+                }
+                continent = Continent.valueOf(cName);
+                area = rs.getFloat(4);
                 head = rs.getString(5);
 
                 c = new Country.CountryBuilder(code, name, continent, area, head).build();
@@ -44,13 +49,7 @@ public class MySqlCountryDAO implements CountryDAO{
     public Country findCountryById(String code) {
 
         String query = "SELECT * FROM country WHERE code = " + code + ";";
-        ResultSet rs = db.select(query);
-
-        String name = "";
-        Continent continent;
-        double area;
-        String head;
-        Country c = null;
+        ResultSet rs = db.getInstance().select(query);
 
         try {
 
@@ -58,8 +57,12 @@ public class MySqlCountryDAO implements CountryDAO{
 
                 code = rs.getString(1);
                 name = rs.getString(2);
-                continent = Continent.valueOf(rs.getString(3));;
-                area = rs.getDouble(4);
+                cName = rs.getString(3).replace(" ", "_");
+                if(cName.isEmpty()){
+                    return null;
+                }
+                continent = Continent.valueOf(cName);
+                area = rs.getFloat(4);
                 head = rs.getString(5);
 
                 c = new Country.CountryBuilder(code, name, continent, area, head).build();
@@ -75,13 +78,7 @@ public class MySqlCountryDAO implements CountryDAO{
     @Override
     public Country findCountryByName(String name) {
         String query = "SELECT * FROM country WHERE code = " + name + ";";
-        ResultSet rs = db.select(query);
-
-        String code = "";
-        Continent continent;
-        double area;
-        String head;
-        Country c = null;
+        ResultSet rs = db.getInstance().select(query);
 
         try {
 
@@ -89,8 +86,12 @@ public class MySqlCountryDAO implements CountryDAO{
 
                 code = rs.getString(1);
                 name = rs.getString(2);
-                continent = Continent.valueOf(rs.getString(3));;
-                area = rs.getDouble(4);
+                cName = rs.getString(3).replace(" ", "_");
+                if(cName.isEmpty()){
+                    return null;
+                }
+                continent = Continent.valueOf(cName);
+                area = rs.getFloat(4);
                 head = rs.getString(5);
 
                 c = new Country.CountryBuilder(code, name, continent, area, head).build();
@@ -109,11 +110,11 @@ public class MySqlCountryDAO implements CountryDAO{
         String code = country.getCode();
         String name = country.getName();
         Continent continent = country.getContinent();
-        double area = country.getArea();
+        float area = country.getArea();
         String head = country.getHead();
 
         String query = "INSERT INTO country (code, name, continent, area, head) VALUES ('"+code+"', '"+name+"', '"+continent+"', '"+area+"', '"+head+"');";
 
-        return db.save(query);
+        return db.getInstance().save(query);
     }
 }

@@ -4,7 +4,7 @@ public class Country {
     private String code;
     private String name;
     private Continent continent;
-    private double area;
+    private float area;
     private String head;
 
     //defining the constructor
@@ -29,12 +29,20 @@ public class Country {
         return continent;
     }
 
-    public double getArea() {
+    public float getArea() {
         return area;
     }
 
     public String getHead() {
         return head;
+    }
+
+    public String toString(){
+        return "Country Code: " + code + ", " +
+                "Name: " + name + ", " +
+                "Continent: " + continent + ", " +
+                "Surface Area: " + area + ", " +
+                "Head Of State: " + head + " \n";
     }
 
     //inner builder class
@@ -43,11 +51,11 @@ public class Country {
         private String code;
         private String name;
         private Continent continent;
-        private double area;
+        private float area;
         private String head;
 
         //builder constructor
-        public CountryBuilder(String code, String name, Continent continent, double area, String head){
+        public CountryBuilder(String code, String name, Continent continent, float area, String head){
             this.code = code;
             this.name = name;
             this.continent = continent;
