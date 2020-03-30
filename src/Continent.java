@@ -1,3 +1,5 @@
+//This is the ENUM class as required by the lecturer/database model.
+
 public enum Continent {
 
     Asia ("Asia"),

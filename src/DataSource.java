@@ -1,3 +1,5 @@
+//This class has the Singleton Pattern implemented.
+
 import java.sql.*;
 
 public class DataSource {

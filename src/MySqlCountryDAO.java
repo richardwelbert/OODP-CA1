@@ -1,11 +1,15 @@
+//This class has the DAO Pattern implemented.
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MySqlCountryDAO implements CountryDAO{
 
+    //instance of the DataSource class that creates a connection with the database
     private DataSource db = DataSource.getInstance();
 
+    //global variables to prevent writing the same code multiple times
     private String code = "";
     private String name = "";
     private Continent continent;
@@ -14,6 +18,7 @@ public class MySqlCountryDAO implements CountryDAO{
     private String head;
     private Country c = null;
 
+    //Method that finds all countries in the database
     @Override
     public ArrayList<Country> getCountries() {
 
@@ -45,6 +50,7 @@ public class MySqlCountryDAO implements CountryDAO{
 
     }
 
+    //Method that finds countries in the database with a specific code.
     @Override
     public Country findCountryById(String code) {
 
@@ -75,6 +81,7 @@ public class MySqlCountryDAO implements CountryDAO{
         return null;
     }
 
+    //Method that finds a country in the database with an specific name.
     @Override
     public Country findCountryByName(String name) {
         String query = "SELECT * FROM country WHERE Name = '" + name + "';";
@@ -104,6 +111,7 @@ public class MySqlCountryDAO implements CountryDAO{
         return null;
     }
 
+    //Method that saves a new country in the database according to the input of the user.
     @Override
     public boolean saveCountry(Country country) {
 

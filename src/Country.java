@@ -1,3 +1,5 @@
+//This class has the Builder pattern implemented.
+
 public class Country {
 
     //private variables
@@ -35,6 +37,26 @@ public class Country {
 
     public String getHead() {
         return head;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setContinent(Continent continent) {
+        this.continent = continent;
+    }
+
+    public void setArea(float area) {
+        this.area = area;
+    }
+
+    public void setHead(String head) {
+        this.head = head;
     }
 
     public String toString(){

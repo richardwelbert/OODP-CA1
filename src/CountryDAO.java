@@ -1,3 +1,5 @@
+//This class is the Interface DAO API as required for the DAO Pattern.
+
 import java.util.ArrayList;
 
 public interface CountryDAO {
