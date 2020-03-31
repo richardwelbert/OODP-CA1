@@ -9,6 +9,7 @@ public class MySqlCountryDAO implements CountryDAO{
     //instance of the DataSource class that creates a connection with the database
     private DataSource db = DataSource.getInstance();
 
+
     //global variables to prevent writing the same code multiple times
     private String code = "";
     private String name = "";
@@ -17,6 +18,7 @@ public class MySqlCountryDAO implements CountryDAO{
     private float area;
     private String head;
     private Country c = null;
+    private ResultSet rs;
 
     //Method that finds all countries in the database
     @Override
@@ -25,7 +27,7 @@ public class MySqlCountryDAO implements CountryDAO{
         ArrayList<Country> countries = new ArrayList<Country>();
 
         String query = "SELECT * FROM country";
-        ResultSet rs = db.getInstance().select(query);
+        rs = db.getInstance().select(query);
 
         try {
 
@@ -55,7 +57,7 @@ public class MySqlCountryDAO implements CountryDAO{
     public Country findCountryById(String code) {
 
         String query = "SELECT * FROM country WHERE code = '" + code + "';";
-        ResultSet rs = db.getInstance().select(query);
+        rs = db.getInstance().select(query);
 
         try {
 
@@ -85,7 +87,7 @@ public class MySqlCountryDAO implements CountryDAO{
     @Override
     public Country findCountryByName(String name) {
         String query = "SELECT * FROM country WHERE Name = '" + name + "';";
-        ResultSet rs = db.getInstance().select(query);
+        rs = db.getInstance().select(query);
 
         try {
 

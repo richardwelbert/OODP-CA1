@@ -123,7 +123,7 @@ public class Client {
             System.out.println("Now type a Surface Area for this new Country:");
             float input4 = Float.parseFloat(readingFromUser());
 
-            System.out.println("Now type a Head Of State for this new Country:");
+            System.out.println("And to finish, type the Country's Head Of State:");
             String input5 = readingFromUser();
 
         Country c = new Country.CountryBuilder (input, input2, con, input4, input5).build();

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f40884ea-d7fb-44e1-ae75-9541a24b0bfb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MySqlCountryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MySqlCountryDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +69,7 @@
       <workItem from="1585080527554" duration="299000" />
       <workItem from="1585330447834" duration="1228000" />
       <workItem from="1585331801705" duration="429000" />
-      <workItem from="1585597938386" duration="16994000" />
+      <workItem from="1585597938386" duration="17483000" />
     </task>
     <servers />
   </component>
