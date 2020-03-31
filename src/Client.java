@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.Scanner;
 
 public class Client {
@@ -12,14 +13,14 @@ public class Client {
     }
 
     //method to read input from the user
-    public String readingFromUser(){
+    private String readingFromUser(){
         Scanner sc = new Scanner( System.in );
         String input = sc.nextLine();
         return input;
     }
 
     //Main menu
-    public void menu(){
+    private void menu(){
 
         System.out.println("Hello! Welcome to the World System! \n" +
                 "Please, enter one of the options below:\n\n" +
@@ -32,7 +33,7 @@ public class Client {
     }
 
     //Submenu
-    public void subMenu() {
+    private void subMenu() {
 
         String input = readingFromUser();
         if(input.equals("1")) {
@@ -92,9 +93,9 @@ public class Client {
         System.out.println("Please tell me the Country Name: \n");
 
         String input = readingFromUser();
-        c = dao.findCountryByName(input);
+        ArrayList<Country> countries = dao.findCountryByName(input);
         System.out.println("Here is the Country requested:");
-        System.out.println(c);
+        System.out.println(countries);
         menu();
     }
 
@@ -111,13 +112,17 @@ public class Client {
                     "Redirecting you to the main menu.\n\n");
             menu();
         }
-            System.out.println("Now type a Name for this new Country:");
-            String input2 = readingFromUser();
+        System.out.println("Now type a Name for this new Country:");
+        String input2 = readingFromUser();
 
-            System.out.println("And a Continent that matches those options:\n" +
-                    "'Asia', 'Europe', 'North America', 'Africa', 'Oceania', 'Antarctica' or 'South America'\n" +
-                    "Please note the system is case-sensitive.");
-            String input3 = readingFromUser();
+        System.out.println("And a Continent that matches those options:\n" +
+                "'Asia', 'Europe', 'North America', 'Africa', 'Oceania', 'Antarctica' or 'South America'\n" +
+                "Please note the system is case-sensitive.");
+        String input3 = readingFromUser();
+
+
+        if (enumIsValid(input3)){
+
             Continent con = Continent.valueOf(input3);
 
             System.out.println("Now type a Surface Area for this new Country:");
@@ -126,9 +131,29 @@ public class Client {
             System.out.println("And to finish, type the Country's Head Of State:");
             String input5 = readingFromUser();
 
-        Country c = new Country.CountryBuilder (input, input2, con, input4, input5).build();
+            Country c = new Country.CountryBuilder (input, input2, con, input4, input5).build();
+            dao.saveCountry(c);
+            menu();
+        } else {
+            System.out.println("Sorry, this Continent is not valid.\n" +
+                    "Redirecting you to the main menu.\n\n");
+            input3 = "";
+            menu();
+        }
 
         return c;
+    }
+
+    private boolean enumIsValid(String enumName){
+
+        EnumSet<Continent> except = EnumSet.of(Continent.Europe, Continent.Africa, Continent.Antarctica, Continent.Asia, Continent.North_America, Continent.Oceania, Continent.South_America);
+
+        boolean valid;
+        try {
+            valid = except.contains(Continent.valueOf(enumName));
+        } catch (IllegalArgumentException e) { valid = false; }
+        System.out.println(valid ? "valid" : "invalid");
+        return valid;
     }
 
 }
