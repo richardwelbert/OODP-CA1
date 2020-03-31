@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Client {
 
     CountryDAO dao = new MySqlCountryDAO();
+    Country c;
 
     public Client(){
 
@@ -17,6 +18,7 @@ public class Client {
         return input;
     }
 
+    //Main menu
     public void menu(){
 
         System.out.println("Hello! Welcome to the World System! \n" +
@@ -29,57 +31,104 @@ public class Client {
         subMenu();
     }
 
+    //Submenu
     public void subMenu() {
 
         String input = readingFromUser();
         if(input.equals("1")) {
-            System.out.println("Here's a list of ALL Countries!\n");
-            ArrayList<Country> countries = dao.getCountries();
-            System.out.println(countries);
-            menu();
+
+            listAllCountries();
         }
         else if(input.equals("2")) {
-            System.out.println("Find a Country by Country Code!");
-            System.out.println("Please tell me the Country Code: \n" +
-                    "(It shouldn't be more than 3 characters!) \n");
-            String input2 = readingFromUser();
 
-            if (input2.length() <= 3){
-                Country c = dao.findCountryById(input2);
-                System.out.println("Here is the Country requested:");
-                System.out.println(c);
-                menu();
-            }
-            else {
-                System.out.println("I'm sorry, this is Code is invalid.\n" +
-                        "Please remember the Country Code shouldn't exceed 3 characters!\n" +
-                        "Redirecting you to the main menu.\n\n");
-                menu();
-            }
-
+            findByCode();
         }
         else if(input.equals("3")) {
-            System.out.println("Find a Country by Country Name!");
-            System.out.println("Please tell me the Country Name: \n");
-            String input3 = readingFromUser();
-            Country c = dao.findCountryByName(input3);
-            System.out.println("Here is the Country requested:");
-            System.out.println(c);
-            menu();
+
+            findByName();
         }
-//        else if(input.equals("4")) {
-//            System.out.println("Save a New Country! \n");
-//            System.out.println("Please tell me the Country Name: \n");
-//            String input3 = readingFromUser();
-//            Country c = dao.findCountryByName(input3);
-//            System.out.println("Here is the Country requested: \n");
-//            System.out.println(c);
-//        }
+        else if(input.equals("4")) {
+
+            saveNewCountry();
+        }
         else if(input.equals("5")) {
             System.out.println("Goodbye!");
             System.exit(0);
         }
 
+    }
+
+    private void listAllCountries(){
+        System.out.println("Here's a list of ALL Countries!\n");
+        ArrayList<Country> countries = dao.getCountries();
+        System.out.println(countries);
+        menu();
+    }
+
+    private void findByCode(){
+
+        System.out.println("Find a Country by Country Code!");
+        System.out.println("Please tell me the Country Code: \n" +
+                "(It shouldn't be more than 3 characters!) \n");
+        String input = readingFromUser();
+
+        if (input.length() <= 3){
+            c = dao.findCountryById(input);
+            System.out.println("Here is the Country requested:");
+            System.out.println(c);
+            menu();
+        }
+        else {
+            System.out.println("I'm sorry, this is Code is invalid.\n" +
+                    "Please remember the Country Code shouldn't exceed 3 characters!\n" +
+                    "Redirecting you to the main menu.\n\n");
+            menu();
+        }
+    }
+
+    private void findByName(){
+
+        System.out.println("Find a Country by Country Name!");
+        System.out.println("Please tell me the Country Name: \n");
+
+        String input = readingFromUser();
+        c = dao.findCountryByName(input);
+        System.out.println("Here is the Country requested:");
+        System.out.println(c);
+        menu();
+    }
+
+    private Country saveNewCountry (){
+
+        System.out.println("Save a New Country! \n");
+        System.out.println("Please type a Code for this new Country:" +
+                "(It shouldn't be more than 3 characters!)");
+        String input = readingFromUser();
+
+        if (input.length() > 3){
+            System.out.println("I'm sorry, this is Code is invalid.\n" +
+                    "Please remember the Country Code shouldn't exceed 3 characters!\n" +
+                    "Redirecting you to the main menu.\n\n");
+            menu();
+        }
+            System.out.println("Now type a Name for this new Country:");
+            String input2 = readingFromUser();
+
+            System.out.println("And a Continent that matches those options:\n" +
+                    "'Asia', 'Europe', 'North America', 'Africa', 'Oceania', 'Antarctica' or 'South America'\n" +
+                    "Please note the system is case-sensitive.");
+            String input3 = readingFromUser();
+            Continent con = Continent.valueOf(input3);
+
+            System.out.println("Now type a Surface Area for this new Country:");
+            float input4 = Float.parseFloat(readingFromUser());
+
+            System.out.println("Now type a Head Of State for this new Country:");
+            String input5 = readingFromUser();
+
+        Country c = new Country.CountryBuilder (input, input2, con, input4, input5).build();
+
+        return c;
     }
 
 }
