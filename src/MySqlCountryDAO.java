@@ -85,32 +85,34 @@ public class MySqlCountryDAO implements CountryDAO{
 
     //Method that finds a country in the database with an specific name.
     @Override
-    public Country findCountryByName(String name) {
+    public ArrayList<Country> findCountryByName(String name) {
+
+        ArrayList<Country> countries = new ArrayList<Country>();
+
         String query = "SELECT * FROM country WHERE Name = '" + name + "';";
         rs = db.getInstance().select(query);
 
         try {
 
-            if (rs.next()) {
+            while (rs.next()) {
 
                 code = rs.getString(1);
                 name = rs.getString(2);
                 cName = rs.getString(3).replace(" ", "_");
                 if(cName.isEmpty()){
-                    return null;
+                    continue;
                 }
                 continent = Continent.valueOf(cName);
                 area = rs.getFloat(4);
                 head = rs.getString(5);
 
                 c = new Country.CountryBuilder(code, name, continent, area, head).build();
-                return c;
+                countries.add(c);
             }
-            return null;
         } catch (SQLException e){
             e.printStackTrace();
         }
-        return null;
+        return countries;
     }
 
     //Method that saves a new country in the database according to the input of the user.
