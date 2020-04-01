@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9b3c3ea8-d9f1-4b63-b898-865e39b098f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OODPCA1/CLI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OODPCA1/CLI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OODPCA1/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OODPCA1/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OODPCA1/Country$CountryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OODPCA1/Country$CountryBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OODPCA1/Country.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OODPCA1/Country.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Country.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Country.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CountryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CountryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MySqlCountryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MySqlCountryDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

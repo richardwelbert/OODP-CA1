@@ -58,9 +58,7 @@ public class MySqlCountryDAO implements CountryDAO{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return countries;
-
     }
 
     //Method that finds countries in the database with an specific code.
@@ -96,7 +94,6 @@ public class MySqlCountryDAO implements CountryDAO{
         } catch (SQLException e){
             e.printStackTrace();
         }
-
         return null;
     }
 
@@ -138,7 +135,6 @@ public class MySqlCountryDAO implements CountryDAO{
         } catch (SQLException e){
             e.printStackTrace();
         }
-
         return countries;
     }
 

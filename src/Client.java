@@ -167,7 +167,6 @@ public class Client {
             input3 = "";
             menu();
         }
-
         return c;
     }
 
@@ -179,7 +178,6 @@ public class Client {
 
         boolean valid;
         try {
-
             //Checking if the input matches the values in the array
             valid = except.contains(Continent.valueOf(enumName));
         } catch (IllegalArgumentException e) { valid = false; }
