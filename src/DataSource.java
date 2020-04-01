@@ -11,11 +11,12 @@ public class DataSource {
     private String un = "cctstudent";
     private String pw = "Pass1234!";
 
+    //Global variables
     private Connection conn;
     private Statement stmt;
     private ResultSet rs = null;
 
-    //private constructor to make sure that no other object can create an instance of it
+    //Private constructor to make sure that no other object can create an instance of it
     private DataSource() {
 
         try{
@@ -23,7 +24,7 @@ public class DataSource {
             // Get a connection to the database
             conn = DriverManager.getConnection( db, un, pw ) ;
 
-            // Get a statement from the connection
+            // Get a statement of the connection
             stmt = conn.createStatement() ;
         }
         catch( SQLException se ){
@@ -43,7 +44,7 @@ public class DataSource {
         }
     }
 
-    //method to save on the database
+    //Method to save on the database. Receives a query and returns true or false
     public boolean save(String query){
 
         try {
@@ -55,20 +56,20 @@ public class DataSource {
         }
     }
 
-    //method to select entries from the database
+    //Method to select entries from the database. Receives a query and returns the Result Set
     public ResultSet select(String query){
-        // Execute the query
 
+        // Execute the query
         try {
             rs = stmt.executeQuery(query);
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return rs;
     }
 
+    //Closing the connection with the Database
     public void closing(){
 
         // Close the result set, statement and the connection
@@ -82,7 +83,7 @@ public class DataSource {
         }
     }
 
-    //method to access the singleton instance of this class
+    //Method to access the singleton instance of this class
     public static DataSource getInstance() {
         return instance;
     }

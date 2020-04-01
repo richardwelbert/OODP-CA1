@@ -2,14 +2,14 @@
 
 public class Country {
 
-    //private variables
+    //Private variables
     private String code;
     private String name;
     private Continent continent;
     private float area;
     private String head;
 
-    //defining the constructor
+    //Defining the constructor
     private Country(CountryBuilder builder){
         this.code = builder.code;
         this.name = builder.name;
@@ -18,7 +18,7 @@ public class Country {
         this.head = builder.head;
     }
 
-    //getters
+    //Getters
     public String getCode() {
         return code;
     }
@@ -39,26 +39,7 @@ public class Country {
         return head;
     }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setContinent(Continent continent) {
-        this.continent = continent;
-    }
-
-    public void setArea(float area) {
-        this.area = area;
-    }
-
-    public void setHead(String head) {
-        this.head = head;
-    }
-
+    //Specific implementation of the Country
     public String toString(){
         return "Country Code: " + code + ", " +
                 "Name: " + name + ", " +
@@ -67,7 +48,7 @@ public class Country {
                 "Head Of State: " + head + " \n";
     }
 
-    //inner builder class
+    //Inner builder class
     public static class CountryBuilder {
 
         private String code;
@@ -76,7 +57,7 @@ public class Country {
         private float area;
         private String head;
 
-        //builder constructor
+        //Builder constructor
         public CountryBuilder(String code, String name, Continent continent, float area, String head){
             this.code = code;
             this.name = name;
