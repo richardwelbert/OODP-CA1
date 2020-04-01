@@ -91,14 +91,20 @@ public class Client {
         String input = readingFromUser();
 
         //Validation of the code (can't have more than 3 characters)
-        if (input.length() <= 3){
+        if (input.length() <= 3) {
 
             //Calling the method in the DAO class to find by ID
             c = dao.findCountryById(input);
-            System.out.println("Here is the Country requested:");
-            //Printing the country requested
-            System.out.println(c);
-            menu();
+            if (c == null) {
+                System.out.println("Sorry, this value doesn't exist!\n" +
+                        "Please try it again!\n");
+                menu();
+            } else {
+                System.out.println("Here is the Country requested:");
+                //Printing the country requested
+                System.out.println(c);
+                menu();
+            }
         }
         else {
             System.out.println("I'm sorry, this is Code is invalid.\n" +
@@ -118,12 +124,16 @@ public class Client {
 
         //Calling the method in the DAO class to find by Name
         countries = dao.findCountryByName(input);
-
-        System.out.println("Here is the Country requested:");
-        //Printing all countries with the specific name
-
-        System.out.println(countries);
-        menu();
+        if (countries.isEmpty()) {
+            System.out.println("Sorry, this value doesn't exist!\n" +
+                    "Please try it again!\n");
+            menu();
+        }else {
+            System.out.println("Here is the Country requested:");
+            //Printing all countries with the specific name
+            System.out.println(countries);
+            menu();
+        }
     }
 
     //Method that creates a new country and saves into the database
@@ -188,7 +198,7 @@ public class Client {
     //Availability: https://codereview.stackexchange.com/questions/42620/validating-an-input-string-against-some-enum-fields
 
     //Method that validates the continent. Must match with the Enum class.
-    private boolean enumIsValid(String enumName){
+    private boolean enumIsValid (String enumName){
 
         //Creating an Enum Set with the Enum values
         EnumSet<Continent> except = EnumSet.of(Continent.Europe, Continent.Africa, Continent.Antarctica, Continent.Asia, Continent.North_America, Continent.Oceania, Continent.South_America);

@@ -70,9 +70,12 @@ public class DataSource {
         // Execute the query
         try {
             rs = stmt.executeQuery(query);
+            if (rs == null){
+                System.out.println("Sorry, this value doesn't exist!");
+            }
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Sorry, this value doesn't exist!");
         }
         return rs;
     }
