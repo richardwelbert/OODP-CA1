@@ -8,11 +8,6 @@ public class Client {
     ArrayList<Country> countries;
     Country c;
 
-    public Client(){
-
-        menu();
-    }
-
     //method to read input from the user
     public String readingFromUser(){
         Scanner sc = new Scanner( System.in );
@@ -64,6 +59,7 @@ public class Client {
         System.out.println("Here's a list of ALL Countries!\n");
         countries = dao.getCountries();
         System.out.println(countries);
+        System.out.println("Redirecting you to the Main Menu.\n");
         menu();
     }
 
@@ -121,10 +117,11 @@ public class Client {
                 "'Asia', 'Europe', 'North America', 'Africa', 'Oceania', 'Antarctica' or 'South America'\n" +
                 "Please note the system is case-sensitive.");
         String input3 = readingFromUser();
+        String contName = input3.replaceAll("\\s+", "_");
 
-        if (enumIsValid(input3)){
+        if (enumIsValid(contName)){
 
-            Continent con = Continent.valueOf(input3);
+            Continent con = Continent.valueOf(contName);
 
             System.out.println("Now type a Surface Area for this new Country:");
             float input4 = Float.parseFloat(readingFromUser());
@@ -134,6 +131,7 @@ public class Client {
 
             Country c = new Country.CountryBuilder (input, input2, con, input4, input5).build();
             dao.saveCountry(c);
+            System.out.println("Congratulations! The Country was added into the system!\n");
             menu();
         } else {
             System.out.println("Sorry, this Continent is not valid.\n" +
@@ -153,7 +151,7 @@ public class Client {
         try {
             valid = except.contains(Continent.valueOf(enumName));
         } catch (IllegalArgumentException e) { valid = false; }
-        System.out.println(valid ? "valid" : "invalid");
+        //System.out.println(valid ? "valid" : "invalid");
         return valid;
     }
 

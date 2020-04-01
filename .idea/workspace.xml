@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f40884ea-d7fb-44e1-ae75-9541a24b0bfb" name="Default Changelist" comment="">
+    <list default="true" id="9b3c3ea8-d9f1-4b63-b898-865e39b098f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-=======
+      <change beforePath="$PROJECT_DIR$/out/production/OODPCA1/CLI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OODPCA1/CLI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OODPCA1/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OODPCA1/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OODPCA1/MySqlCountryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OODPCA1/MySqlCountryDAO.class" afterDir="false" />
->>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/src/CLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CLI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MySqlCountryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MySqlCountryDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +40,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="configurable.group.other" />
   </component>
   <component name="RunManager">
@@ -74,11 +72,8 @@
       <workItem from="1585080527554" duration="299000" />
       <workItem from="1585330447834" duration="1228000" />
       <workItem from="1585331801705" duration="429000" />
-<<<<<<< Updated upstream
       <workItem from="1585597938386" duration="17483000" />
-=======
       <workItem from="1585597938386" duration="34529000" />
->>>>>>> Stashed changes
     </task>
     <servers />
   </component>
@@ -94,41 +89,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585330543551" />
-<<<<<<< Updated upstream
-    <state width="1323" height="255" key="GridCell.Tab.0.bottom" timestamp="1585611994577">
+    <state width="1323" height="193" key="GridCell.Tab.0.bottom" timestamp="1585756387910">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="255" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585611994577" />
-    <state width="1323" height="255" key="GridCell.Tab.0.center" timestamp="1585611994577">
+    <state width="1323" height="193" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585756387910" />
+    <state width="1323" height="193" key="GridCell.Tab.0.center" timestamp="1585756387910">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="255" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585611994577" />
-    <state width="1323" height="255" key="GridCell.Tab.0.left" timestamp="1585611994577">
+    <state width="1323" height="193" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585756387910" />
+    <state width="1323" height="193" key="GridCell.Tab.0.left" timestamp="1585756387909">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="255" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585611994577" />
-    <state width="1323" height="255" key="GridCell.Tab.0.right" timestamp="1585611994577">
+    <state width="1323" height="193" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585756387909" />
+    <state width="1323" height="193" key="GridCell.Tab.0.right" timestamp="1585756387910">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="255" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585611994577" />
-=======
-    <state width="1323" height="193" key="GridCell.Tab.0.bottom" timestamp="1585695623878">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585695623878" />
-    <state width="1323" height="193" key="GridCell.Tab.0.center" timestamp="1585695623877">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585695623877" />
-    <state width="1323" height="193" key="GridCell.Tab.0.left" timestamp="1585695623877">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585695623877" />
-    <state width="1323" height="193" key="GridCell.Tab.0.right" timestamp="1585695623877">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state width="1323" height="193" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585695623877" />
->>>>>>> Stashed changes
+    <state width="1323" height="193" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585756387910" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1585330552230">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
