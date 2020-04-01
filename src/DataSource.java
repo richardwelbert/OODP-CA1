@@ -59,7 +59,7 @@ public class DataSource {
             stmt.execute(query);
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Sorry, this country has duplicate values. Please try it again");
             return false;
         }
     }

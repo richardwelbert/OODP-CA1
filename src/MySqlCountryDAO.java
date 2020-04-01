@@ -153,7 +153,11 @@ public class MySqlCountryDAO implements CountryDAO{
         String query = "INSERT INTO country (Code, Name, Continent, SurfaceArea, HeadOfState) VALUES ('"+code+"', '"+name+"', '"+continent+"', '"+area+"', '"+head+"');";
 
         boolean save = db.getInstance().save(query);
-
+        if (save){
+            System.out.println("Congratulations! The Country was added into the system! :)\n");
+        } else{
+            System.out.println("This country wasn't saved! :(\n");
+        }
         return save;
     }
 }

@@ -129,6 +129,8 @@ public class Client {
     //Method that creates a new country and saves into the database
     private Country saveNewCountry (){
 
+        Continent con = null;
+
         System.out.println("Save a New Country! \n");
         System.out.println("Please type a Code for this new Country:" +
                 "(It shouldn't be more than 3 characters!)");
@@ -141,6 +143,7 @@ public class Client {
                     "Redirecting you to the main menu.\n\n");
             menu();
         }
+
         System.out.println("Now type a Name for this new Country:");
         String input2 = readingFromUser();
 
@@ -154,29 +157,28 @@ public class Client {
 
         //Validation of the continent. Must match with the Enum class.
         if (enumIsValid(contName)){
-
             //Assigning the contents of the string into the enum continent
-            Continent con = Continent.valueOf(contName);
+            con = Continent.valueOf(contName);
 
-            System.out.println("Now type a Surface Area for this new Country:");
-            float input4 = Float.parseFloat(readingFromUser());
-
-            System.out.println("And to finish, type the Country's Head Of State:");
-            String input5 = readingFromUser();
-
-            //Creating a new object Country
-            Country c = new Country.CountryBuilder (input, input2, con, input4, input5).build();
-            //Saving into the Database
-            dao.saveCountry(c);
-            System.out.println("Congratulations! The Country was added into the system!\n");
-
-            menu();
         } else {
             System.out.println("Sorry, this Continent is not valid.\n" +
                     "Redirecting you to the main menu.\n\n");
             input3 = "";
             menu();
         }
+        System.out.println("Now type a Surface Area for this new Country:");
+        float input4 = Float.parseFloat(readingFromUser());
+
+        System.out.println("And to finish, type the Country's Head Of State:");
+        String input5 = readingFromUser();
+
+        //Creating a new object Country
+        Country c = new Country.CountryBuilder (input, input2, con, input4, input5).build();
+        //Saving into the Database
+        dao.saveCountry(c);
+
+
+        menu();
         return c;
     }
 
