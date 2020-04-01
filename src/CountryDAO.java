@@ -1,3 +1,11 @@
+/****************************************************************************
+ * Code adapted from the structure provided by our Lecutrer
+ *Title: Week5.2/src/CustomerDAO.java
+ *Author: Amilcar Aponte
+ *Date: 01/04/2020 (last accessed)
+ *Availability: https://moodle.cct.ie/course/view.php?id=1505
+ ****************************************************************************/
+
 //This class is the Interface DAO API as required for the DAO Pattern.
 
 import java.util.ArrayList;

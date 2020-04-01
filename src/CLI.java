@@ -6,6 +6,7 @@ public class CLI {
 
         //Creates a new object of the class Client and runs it
         Client cli = new Client ();
+        cli.menu();
 
     }
 

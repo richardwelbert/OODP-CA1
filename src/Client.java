@@ -1,3 +1,11 @@
+/****************************************************************************
+ * Code adapted from the structure provided by our Lecutrer
+ *Title: Week5.2/src/MainWeek5.java
+ *Author: Amilcar Aponte
+ *Date: 01/04/2020 (last accessed)
+ *Availability: https://moodle.cct.ie/course/view.php?id=1505
+ ****************************************************************************/
+
 //This class is responsible for the interaction with the user
 
 import java.util.ArrayList;
@@ -22,7 +30,7 @@ public class Client {
     }
 
     //Main menu
-    private void menu(){
+    public void menu(){
 
         System.out.println("Hello! Welcome to the World System! \n" +
                 "Please, enter one of the options below:\n\n" +
@@ -55,6 +63,7 @@ public class Client {
             saveNewCountry();
         }
         else if(input.equals("5")) {
+            DataSource.getInstance().closing();
             System.out.println("Goodbye!");
             System.exit(0);
         }
@@ -146,6 +155,7 @@ public class Client {
         //Validation of the continent. Must match with the Enum class.
         if (enumIsValid(contName)){
 
+            //Assigning the contents of the string into the enum continent
             Continent con = Continent.valueOf(contName);
 
             System.out.println("Now type a Surface Area for this new Country:");
@@ -170,6 +180,11 @@ public class Client {
         return c;
     }
 
+    //Code below adapted from the structure that can be found on the link below
+    //Author: Simon Forsberg
+    //Date: 01/04/2020 (last accessed)
+    //Availability: https://codereview.stackexchange.com/questions/42620/validating-an-input-string-against-some-enum-fields
+
     //Method that validates the continent. Must match with the Enum class.
     private boolean enumIsValid(String enumName){
 
@@ -181,6 +196,8 @@ public class Client {
             //Checking if the input matches the values in the array
             valid = except.contains(Continent.valueOf(enumName));
         } catch (IllegalArgumentException e) { valid = false; }
+
+        //Printing to check if it's valid or not
         //System.out.println(valid ? "valid" : "invalid");
 
         return valid;

@@ -1,3 +1,11 @@
+/****************************************************************************
+ * Code adapted from the structure provided by our Lecutrer
+ *Title: Week5.2/src/MySQLCustomerDAO.java
+ *Author: Amilcar Aponte
+ *Date: 01/04/2020 (last accessed)
+ *Availability: https://moodle.cct.ie/course/view.php?id=1505
+ ****************************************************************************/
+
 //This class has the DAO Pattern implemented.
 
 import java.sql.ResultSet;
@@ -50,9 +58,6 @@ public class MySqlCountryDAO implements CountryDAO{
                 c = new Country.CountryBuilder(code, name, continent, area, head).build();
                 //Adding the countries inside the ArrayList
                 countries.add(c);
-
-                //Closing the connection with the DB
-                db.closing();
             }
 
         } catch (SQLException e) {
@@ -88,8 +93,6 @@ public class MySqlCountryDAO implements CountryDAO{
                 c = new Country.CountryBuilder(code, name, continent, area, head).build();
                 return c;
             }
-            //Closing the connection with the DB
-            db.closing();
 
         } catch (SQLException e){
             e.printStackTrace();
@@ -129,8 +132,6 @@ public class MySqlCountryDAO implements CountryDAO{
                 //Adding the countries inside the ArrayList
                 countries.add(c);
             }
-            //Closing the connection with the DB
-            db.closing();
 
         } catch (SQLException e){
             e.printStackTrace();
@@ -152,9 +153,6 @@ public class MySqlCountryDAO implements CountryDAO{
         String query = "INSERT INTO country (Code, Name, Continent, SurfaceArea, HeadOfState) VALUES ('"+code+"', '"+name+"', '"+continent+"', '"+area+"', '"+head+"');";
 
         boolean save = db.getInstance().save(query);
-
-        //Closing the connection with the DB
-        db.closing();
 
         return save;
     }

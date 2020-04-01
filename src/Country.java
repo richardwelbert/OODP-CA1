@@ -1,3 +1,11 @@
+/****************************************************************************
+* Code adapted from the structure provided by our Lecutrer
+*Title: BuilderPattern/src/Visa.java and Week5.2/src/Customer.java
+*Author: Amilcar Aponte
+*Date: 01/04/2020 (last accessed)
+*Availability: https://moodle.cct.ie/course/view.php?id=1505
+ ****************************************************************************/
+
 //This class has the Builder pattern implemented.
 
 public class Country {
