@@ -4,9 +4,6 @@
     <list default="true" id="9b3c3ea8-d9f1-4b63-b898-865e39b098f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OODPCA1/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/OODPCA1/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OODPCA1/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OODPCA1/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +71,7 @@
       <workItem from="1585331801705" duration="429000" />
       <workItem from="1585597938386" duration="17483000" />
       <workItem from="1585597938386" duration="34529000" />
-      <workItem from="1585834351053" duration="4238000" />
+      <workItem from="1585834351053" duration="4938000" />
     </task>
     <servers />
   </component>
