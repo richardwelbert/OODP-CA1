@@ -14,6 +14,10 @@ import java.util.Scanner;
 
 public class Client {
 
+    public Client(){
+        menu();
+    }
+
     //Creates a new instance of the DAO class
     CountryDAO dao = new MySqlCountryDAO();
 
@@ -22,7 +26,7 @@ public class Client {
     Country c;
 
     //Method to read input from the user
-    public String readingFromUser(){
+    private String readingFromUser(){
 
         Scanner sc = new Scanner( System.in );
         String input = sc.nextLine();
@@ -30,7 +34,7 @@ public class Client {
     }
 
     //Main menu
-    public void menu(){
+    private void menu(){
 
         System.out.println("Hello! Welcome to the World System! \n" +
                 "Please, enter one of the options below:\n\n" +
@@ -196,7 +200,7 @@ public class Client {
         Country c = new Country.CountryBuilder (input, input2, con, area, input5).build();
         //Saving into the Database
         dao.saveCountry(c);
-        
+
         menu();
         return c;
     }
