@@ -4,10 +4,7 @@
     <list default="true" id="9b3c3ea8-d9f1-4b63-b898-865e39b098f9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/OODPCA1/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OODPCA1/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OODPCA1/DataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OODPCA1/DataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/OODPCA1/MySqlCountryDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OODPCA1/MySqlCountryDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataSource.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +60,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f40884ea-d7fb-44e1-ae75-9541a24b0bfb" name="Default Changelist" comment="" />
+      <changelist id="9b3c3ea8-d9f1-4b63-b898-865e39b098f9" name="Default Changelist" comment="" />
       <created>1583514276655</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -75,6 +72,7 @@
       <workItem from="1585331801705" duration="429000" />
       <workItem from="1585597938386" duration="17483000" />
       <workItem from="1585597938386" duration="34529000" />
+      <workItem from="1585834351053" duration="585000" />
     </task>
     <servers />
   </component>
@@ -86,34 +84,38 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="488" y="73" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1585608980397" />
+    <state x="413" y="111" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1585834519148">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="111" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1366.728@0.0.1366.728" timestamp="1585834519148" />
     <state x="389" y="105" key="FileChooserDialogImpl" timestamp="1585330543551">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="389" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585330543551" />
-    <state width="1323" height="189" key="GridCell.Tab.0.bottom" timestamp="1585768164010">
+    <state width="1323" height="188" key="GridCell.Tab.0.bottom" timestamp="1585834950937">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="189" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585768164010" />
-    <state width="1323" height="189" key="GridCell.Tab.0.center" timestamp="1585768164009">
+    <state width="1323" height="188" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585834950937" />
+    <state width="1323" height="188" key="GridCell.Tab.0.center" timestamp="1585834950935">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="189" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585768164009" />
-    <state width="1323" height="189" key="GridCell.Tab.0.left" timestamp="1585768164008">
+    <state width="1323" height="188" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585834950935" />
+    <state width="1323" height="188" key="GridCell.Tab.0.left" timestamp="1585834950934">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="189" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585768164008" />
-    <state width="1323" height="189" key="GridCell.Tab.0.right" timestamp="1585768164009">
+    <state width="1323" height="188" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585834950934" />
+    <state width="1323" height="188" key="GridCell.Tab.0.right" timestamp="1585834950936">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1323" height="189" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585768164009" />
+    <state width="1323" height="188" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585834950936" />
     <state x="163" y="0" key="SettingsEditor" timestamp="1585330552230">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="163" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1585330552230" />
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1585080607563">
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1585834349555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585080607563" />
+    <state x="379" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585834349555" />
     <state x="65" y="0" key="new project wizard" timestamp="1585080839006">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -177,17 +177,26 @@ public class Client {
             menu();
         }
         System.out.println("Now type a Surface Area for this new Country:");
-        float input4 = Float.parseFloat(readingFromUser());
+        String input4 = readingFromUser();
+
+        //Validation of the Surface Area. Must be only numbers.
+        if (!input4.matches("[0-9]+")) {
+            System.out.println("Sorry, you can only input numbers here.\n" +
+                    "Please try it again. Redirecting you to the main menu.\n");
+            input4 = "";
+            menu();
+        }
+
+        float area = Float.parseFloat(input4);
 
         System.out.println("And to finish, type the Country's Head Of State:");
         String input5 = readingFromUser();
 
         //Creating a new object Country
-        Country c = new Country.CountryBuilder (input, input2, con, input4, input5).build();
+        Country c = new Country.CountryBuilder (input, input2, con, area, input5).build();
         //Saving into the Database
         dao.saveCountry(c);
-
-
+        
         menu();
         return c;
     }
