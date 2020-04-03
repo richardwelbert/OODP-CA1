@@ -51,19 +51,15 @@ public class Client {
 
         String input = readingFromUser();
         if(input.equals("1")) {
-
             listAllCountries();
         }
         else if(input.equals("2")) {
-
             findByCode();
         }
         else if(input.equals("3")) {
-
             findByName();
         }
         else if(input.equals("4")) {
-
             saveNewCountry();
         }
         else if(input.equals("5")) {
@@ -264,5 +260,4 @@ public class Client {
             saveNewCountry();
         }
     }
-
 }
