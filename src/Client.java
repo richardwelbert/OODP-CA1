@@ -94,6 +94,12 @@ public class Client {
                 "(It shouldn't be more than 3 characters!) \n");
         String input = readingFromUser();
 
+        if(input.isEmpty()){
+            System.out.println("Sorry, you need to type something\n" +
+                    "Please try it again.\n\n");
+            findByCode();
+        }
+
         //Validation of the code (can't have more than 3 characters)
         if (input.length() <= 3) {
 
@@ -102,7 +108,7 @@ public class Client {
             if (c == null) {
                 System.out.println("Sorry, this value doesn't exist!\n" +
                         "Please try it again!\n");
-                menu();
+                findByCode();
             } else {
                 System.out.println("Here is the Country requested:");
                 //Printing the country requested
@@ -113,8 +119,8 @@ public class Client {
         else {
             System.out.println("I'm sorry, this is Code is invalid.\n" +
                     "Please remember the Country Code shouldn't exceed 3 characters!\n" +
-                    "Redirecting you to the main menu.\n\n");
-            menu();
+                    "Please try it again.\n\n");
+            findByCode();
         }
     }
 
@@ -126,12 +132,18 @@ public class Client {
 
         String input = readingFromUser();
 
+        if(input.isEmpty()){
+            System.out.println("Sorry, you need to type something\n" +
+                    "Please try it again.\n\n");
+            findByName();
+        }
+
         //Calling the method in the DAO class to find by Name
         countries = dao.findCountryByName(input);
         if (countries.isEmpty()) {
             System.out.println("Sorry, this value doesn't exist!\n" +
                     "Please try it again!\n");
-            menu();
+            findByName();
         }else {
             System.out.println("Here is the Country requested:");
             //Printing all countries with the specific name
@@ -150,21 +162,34 @@ public class Client {
                 "(It shouldn't be more than 3 characters!)");
         String input = readingFromUser();
 
+        inputIsEmpty(input);
+
         //Validation of the country code (can't have more than 3 characters)
         if (input.length() > 3){
             System.out.println("I'm sorry, this is Code is invalid.\n" +
                     "Please remember the Country Code shouldn't exceed 3 characters!\n" +
-                    "Redirecting you to the main menu.\n\n");
-            menu();
+                    "Please try it again.\n\n");
+            saveNewCountry();
         }
 
         System.out.println("Now type a Name for this new Country:");
         String input2 = readingFromUser();
 
+        inputIsEmpty(input2);
+
+        if (!input2.matches("[a-zA-Z_]+")) {
+            System.out.println("Sorry, you can only input letters here.\n" +
+                    "Please try it again.\n");
+            input2 = "";
+            saveNewCountry();
+        }
+
         System.out.println("And a Continent that matches those options:\n" +
                 "'Asia', 'Europe', 'North America', 'Africa', 'Oceania', 'Antarctica' or 'South America'\n" +
                 "Please note the system is case-sensitive.");
         String input3 = readingFromUser();
+
+        inputIsEmpty(input3);
 
         //Replacing the space with the "_" to match with the Enums
         String contName = input3.replaceAll("\\s+", "_");
@@ -176,25 +201,29 @@ public class Client {
 
         } else {
             System.out.println("Sorry, this Continent is not valid.\n" +
-                    "Redirecting you to the main menu.\n\n");
+                    "Please try it again.\n\n");
             input3 = "";
-            menu();
+            saveNewCountry();
         }
         System.out.println("Now type a Surface Area for this new Country:");
         String input4 = readingFromUser();
 
+        inputIsEmpty(input4);
+
         //Validation of the Surface Area. Must be only numbers.
         if (!input4.matches("[0-9]+")) {
             System.out.println("Sorry, you can only input numbers here.\n" +
-                    "Please try it again. Redirecting you to the main menu.\n");
+                    "Please try it again.\n");
             input4 = "";
-            menu();
+            saveNewCountry();
         }
 
         float area = Float.parseFloat(input4);
 
         System.out.println("And to finish, type the Country's Head Of State:");
         String input5 = readingFromUser();
+
+        inputIsEmpty(input5);
 
         //Creating a new object Country
         Country c = new Country.CountryBuilder (input, input2, con, area, input5).build();
@@ -226,6 +255,14 @@ public class Client {
         //System.out.println(valid ? "valid" : "invalid");
 
         return valid;
+    }
+
+    public void inputIsEmpty(String i){
+        if(i.isEmpty()){
+            System.out.println("Sorry, you need to type something\n" +
+                    "Please try it again.\n\n");
+            saveNewCountry();
+        }
     }
 
 }

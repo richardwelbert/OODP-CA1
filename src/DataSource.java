@@ -73,9 +73,8 @@ public class DataSource {
             if (rs == null){
                 System.out.println("Sorry, this value doesn't exist!");
             }
-
         } catch (SQLException e) {
-            System.out.println("Sorry, this value doesn't exist!");
+            e.printStackTrace();
         }
         return rs;
     }
